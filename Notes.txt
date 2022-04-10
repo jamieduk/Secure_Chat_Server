@@ -1,0 +1,327 @@
+J~Net Chat (Online) 2021
+
+
+
+/home/$USERNAME/Documents/Scripts/Crypto/nc/Messaging/Chat_Server
+
+ssh ANONAMOUSE@jnet.sytes.net -p 2022
+
+Or
+
+ssh ANONAMOUSE@localhost -p 2022
+
+/whois zak
+-> name: zak
+ > ip: 137.103.10.33
+ > fingerprint: (no public key)
+ > client: SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.3
+ > joined: 53 minutes ago
+
+-> name: youzername
+ > ip: 185.220.101.15
+ > fingerprint: (no public key)
+ > client: SSH-2.0-OpenSSH_8.3p1 Debian-1
+ > joined: 44 minutes ago
+
+
+https://github.com/shazow/ssh-chat
+https://github.com/shadow-maint/shadow/
+
+sudo +x *.sh
+
+./setup.sh
+
+./menu.sh
+
+
+Inside menu are options to connect to online server!
+
+
+You can edit all these files but you can choose to connect and default connection server will be jnet's server, you can comment out with # in connect.sh file and make it connect to your own server if you want!
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Manual Install and Research Notes!
+
+https://www.tecmint.com/ssh-chat-linux-terminal-chat-client
+
+https://www.tecmint.com/install-go-in-linux/
+
+To create a keypair (for running a server)
+
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f $HOME/.ssh/id_dsa
+
+don enter passphrase if you want auto connections for public users leave blank for secure servers use passphrase!
+
+
+Server:
+
+./ssh-chat --verbose --bind ":2022" --identity ~/.ssh/id_dsa
+ 
+and connect via any command line as ssh client:
+ 
+
+ssh localhost -p 2022
+ 
+ 
+ssh-chat – Make Group/Private Chat with Other Linux Users Over SSH
+Aaron KiliJune 10, 2017 Categories SSH 10 Comments
+
+ssh-chat is a cross-platform command line utility written in GoLang, which enables you to chat securely with a relatively small number of users over an ssh connection. It is specially designed to convert your SSH server into chat service. Once you launch it, you’ll get a chat prompt rather than a usual shell.
+ssh-chat Features
+
+    Enables users to chat in a room via ssh.
+    Supports for private messaging between users.
+    Supports for color theme customization if supported by your ssh client.
+    It can examine any user’s public key fingerprint for identification reasons.
+    Enables users to set a nickname.
+    Support for whitelisting/blocking users as well as kicking users.
+    Supports for listing of all connected users.
+
+In this article, we will explain how to easily setup and use ssh-chat on Linux system to chat with other users on same server.
+Requirements:
+
+As I said, ssh-chat is written in GoLang, so if you don’t have GoLang installed on your system, follow this guide to install it.
+
+    How to Install GoLang (Go Programming Language) in Linux
+
+Installing ssh-chat in Linux Systems
+
+Start by downloading the latest version of ssh-chat from its release page and extract the tar file and move into the package directory to run it as shown.
+
+# cd Downloads
+# wget -c https://github.com/shazow/ssh-chat/releases/download/v1.6/ssh-chat-linux_amd64.tgz
+# tar -xvf ssh-chat-linux_amd64.tgz
+# cd ssh-chat/
+# ./ssh-chat
+
+SSH Chat Server
+
+Now your team members can connect to it using the ssh command, and start chatting in a straightforward chat room via a secure shell connection.
+
+To demonstrate how it all works, we will use a ssh-chat server with IP: 192.168.56.10 and three users (root, tecmint and aaronkilik) connected over ssh to this the server as shown below.
+
+Important: You’ll notice that all the three users are not entering any passwords while connecting to the server, this is because we have setup passwordless login for ssh connections. This is the recommended method of authentication for ssh connections in Linux.
+
+$ ssh tecmint@192.168.56.10
+$ ssh aaronkilik@192.168.56.10
+$ ssh root@192.168.56.10
+
+SSH User Logins without Passwords
+
+While connected to the server over ssh, all the above system users can join the chat room using ssh command like this (they must use the port which the chat server is listening on):
+
+$ ssh localhost -p 2022
+
+SSH Chat Room
+
+To view all chat prompt commands, a user should type the /help command.
+
+[tecmint] /help 
+
+SSH Chat Help
+SSH Chat Help
+
+To send a private message, for instance; if user tecmint wants to send a secret message to aaronkilik, he/she would need to use the /msg command as follows.
+
+[tecmint] /msg aaronkilik Am a hacker btw!
+[aaronkilik] /msg tecmint Oh, that's cool
+
+You’ll notice that root doesn’t view the above messages as shown below.
+SSH Chat User Private Messages
+
+To view a users information, use the /whois command like this.
+
+[aaronkilik]/whois tecmint
+
+To view all connected users in the chat room, use the /names command as follows.
+
+[tecmint] /names
+
+There are several options to use with ssh-chat before starting the server. To set a message of the day file, use the --motd option like this.
+
+$ ssh-chat --motd ~/motd_file  
+
+To define a chat log file, use the --log option as below.
+
+$ ssh-chat --motd ~/motd_file --log /var/log/ssh-chat.log         
+
+You can optionally test with the developers server.
+
+$ ssh chat.shazow.net
+
+Finally, to view all server usage options, type:
+
+$ssh-chat -h
+
+Usage:
+  ssh-chat [OPTIONS]
+
+Application Options:
+  -v, --verbose    Show verbose logging.
+      --version    Print version and exit.
+  -i, --identity=  Private key to identify server with. (default: ~/.ssh/id_rsa)
+      --bind=      Host and port to listen on. (default: 0.0.0.0:2022)
+      --admin=     File of public keys who are admins.
+      --whitelist= Optional file of public keys who are allowed to connect.
+      --motd=      Optional Message of the Day file.
+      --log=       Write chat log to this file.
+      --pprof=     Enable pprof http server for profiling.
+
+Help Options:
+  -h, --help       Show this help message
+
+ssh-chat Github Repository: https://github.com/shazow/ssh-chat
+
+Don’t forget to check out:
+
+    5 Best Practices to Secure and Protect SSH Server
+    Configure “No Password SSH Keys Authentication” with PuTTY on Linux Servers
+    Protect SSH Logins with SSH & MOTD Banner Messages
+    How to Block SSH and FTP Access to Specific IP and Network Range in Linux
+
+ssh-chat is a really simple and easy-to-use secure chat service for Linux users. Do you have any thoughts to share? If yes, then use the feedback form below.
+Tags SSH Tips
+Post navigation
+Become a Web Developer with This Full Stack JavaScript Bundle
+Installation and Configuration of pfSense 2.4.4 Firewall Router
+If you liked this article, then do subscribe to email alerts for Linux tutorials. If you have any questions or doubts? do ask for help in the comments section.
+If You Appreciate What We Do Here On TecMint, You Should Consider:
+
+TecMint is the fastest growing and most trusted community site for any kind of Linux Articles, Guides and Books on the web. Millions of people visit TecMint! to search or browse the thousands of published articles available FREELY to all.
+
+If you like what you are reading, please consider buying us a coffee ( or 2 ) as a token of appreciation.
+
+Support Us
+
+We are thankful for your never ending support.
+Related Posts
+Mosh Shell SSH Client	
+
+How to Install Mosh Shell as SSH Alternative on Linux
+Enable Two Factor Authentication in Ubuntu	
+
+How to Use Two-Factor Authentication with Ubuntu
+Passwordless SSH Login for Multiple Remote Servers	
+
+Setup Passwordless SSH Login for Multiple Remote Servers Using Script
+PuTTY Configuration Tips and Tricks	
+
+Useful PuTTY Configuration Tips and Tricks
+Increase SSH Connection Timeout	
+
+How to Increase SSH Connection Timeout in Linux
+Secure OpenSSH Server	
+
+How to Secure and Harden OpenSSH Server
+10 thoughts on “ssh-chat – Make Group/Private Chat with Other Linux Users Over SSH”
+
+    sankaran	
+    February 7, 2020 at 11:16 am
+
+    I have a problem with an ubuntu DHCP server and pxe boot options. Anyone can help me?
+    Reply	
+    ajay	
+    July 17, 2019 at 10:56 pm
+
+    Hi Team,
+
+    I am from cyber security team, i am working on security controls so from windows and Linux perspective i want to know which document or screenshot from these(Linux and Windows) will suffice for encryption and key management control for audit purpose.
+    Reply	
+    Nurul Episah Bt Eka	
+    May 18, 2018 at 2:17 pm
+
+    Hi, i am a student and quite a beginner in C Linux programming. I just want to ask how to add login prompt for client before they can start chatting with each other?
+    Reply	
+    shazow	
+    June 14, 2017 at 11:59 pm
+
+    Hey there, I’m the author of ssh-chat.
+
+    Some corrections for your article:
+
+    You don’t need to host a gateway for people to access ssh-chat. That is, you don’t need to ssh into one server, only to ssh into ssh-chat after that. You can just ssh into the ssh-chat server directly if the port is exposed. In fact, removing the need for a gateway to have ssh-secured chat is the entire point of ssh-chat.
+
+    Also as others mentioned, you don’t need to compile it from scratch to run the server. You can download our binaries here: https://github.com/shazow/ssh-chat/releases
+
+    More FAQ stuff here: https://github.com/shazow/ssh-chat/wiki/FAQ
+
+    And as always, come say hi and ask questions on the main ssh-chat server:
+
+    ssh chat.shazow.net
+
+    Have fun!
+    – shazow
+    Reply	
+        Aaron Kili	
+        June 15, 2017 at 12:19 pm
+
+        @shazow
+
+        Thanks a lot for writing back: giving us some useful information. We only run ssh into the server because we got errors while trying to connect to ssh-chat server directly. But we’ll test once more and possibly update the article as you have explained. Once more thanks for this useful server, and these remarks.
+        Reply	
+    Tim	
+    June 11, 2017 at 8:47 pm
+
+    Aaron,
+
+    Why is it required to install golang? Are the instructions to download source code and then build with golang?
+
+    Thanks!
+
+    Tim
+    Reply	
+        Aaron Kili	
+        June 12, 2017 at 5:22 pm
+
+        @Tim
+
+        You only need GoLang if your installing from source. Golang is statically compiled in the binary, just install and run it as mentioned by @Will below.
+        Reply	
+    Will	
+    June 10, 2017 at 8:33 pm
+
+    Golang is statically compiled meaning you don’t need to install golang to run the binary files. Just download the executable and run.
+    Reply	
+        Aaron Kili	
+        June 12, 2017 at 5:19 pm
+
+        @Will
+
+        Yes, thats correct, unless you want to install from source. Thanks for the insight.
+        Reply	
+        Tim	
+        June 12, 2017 at 7:49 pm
+
+        Thanks!
+        Reply	
+
+Got something to say? Join the discussion.
+
+Have a question or suggestion? Please leave a comment to start the discussion. Please keep in mind that all comments are moderated and your email address will NOT be published.
+
+
+jnet.sytes.net
+
+jnet.forumotion.com
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For SSH Password for Debian Linux
+
+sudo apt install -y sshpass
+
+Normal SSH Example:
+sshpass -p "YOUR_PASSWORD" ssh -o StrictHostKeyChecking=no YOUR_USERNAME@SOME_SITE.COM
+
+
+Chat Server Example:
+
+sshpass -p "PASSWORD" ./ssh-chat --verbose --bind ":2022" --identity ~/.ssh/id_dsa --log=log.txt --motd=message.txt --admin=admins.txt
+
+
+More found @
+https://stackoverflow.com/questions/12202587/automatically-enter-ssh-password-with-script
+
+
+

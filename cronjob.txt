@@ -1,0 +1,3 @@
+@reboot bash /home/$USERNAME/start_server.sh
+
+
