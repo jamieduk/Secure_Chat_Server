@@ -14,6 +14,10 @@ https://jnet.forumotion.com/t1824-secure-chat-server-for-linux-bash#2829
 git clone https://github.com/jamieduk/Secure_Chat_Server.git
 
 
+To make messgae I used figlet
+
+echo "Welcome to the J~Net Chat" | figlet 
+
 
 
 /home/$USERNAME/Documents/Scripts/Crypto/nc/Messaging/Chat_Server
