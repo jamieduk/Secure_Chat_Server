@@ -1,4 +1,15 @@
-J~Net Chat (Online) 2021
+J~Net Chat (Online) 2022
+
+jnet.sytes.net
+
+jnet.forumotion.com
+
+radio2020.ddns.net
+
+
+
+git clone https://github.com/jamieduk/Secure_Chat_Server.git
+
 
 
 
