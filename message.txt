@@ -8,7 +8,8 @@
  _  | |  |  \| |/ _ \ __| | |   | '_ \ / _` | __|
 | |_| |  | |\  |  __/ |_  | |___| | | | (_| | |_ 
  \___/   |_| \_|\___|\__|  \____|_| |_|\__,_|\__|
-
+ 
+https://jnet.forumotion.com/t1824-secure-chat-server-for-linux-bash#2829
 
 Main Site
 jnet.sytes.net
