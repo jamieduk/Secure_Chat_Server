@@ -7,6 +7,9 @@ jnet.forumotion.com
 radio2020.ddns.net
 
 
+Forum Link
+
+https://jnet.forumotion.com/t1824-secure-chat-server-for-linux-bash#2829
 
 git clone https://github.com/jamieduk/Secure_Chat_Server.git
 
