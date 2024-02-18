@@ -4,9 +4,9 @@
 # sudo apt install -y sshpass
 #
 # Server
-path="/home/jay/Documents/Scripts/Crypto/nc/Messaging/Chat_Server"
+path="/home/$USER/Documents/Scripts/Crypto/nc/Messaging/Chat_Server"
 #
-sshpass -p "Jld161." $path/ssh-chat --verbose --bind ":2022" --identity ~/.ssh/id_dsa --log=$path/log.txt --motd=$path/message.txt --admin=$path/admins.txt
+sshpass -p "PASSWORD-HERE" $path/ssh-chat --verbose --bind ":2022" --identity ~/.ssh/id_dsa --log=$path/log.txt --motd=$path/message.txt --admin=$path/admins.txt
 #sudo ./ssh-chat --verbose --bind ":2022" --identity ~/.ssh/id_dsa --log=log.txt --motd=message.txt --admin=admins.txt
 # Connect To Test Server (jnet.sytes.net)
 #ssh localhost -p 2022
