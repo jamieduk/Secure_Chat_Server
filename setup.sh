@@ -22,11 +22,12 @@ cpu_arch=$(uname -m)
 # Check if the CPU architecture is arm64
 if [ "$cpu_arch" == "aarch64" ]; then
     cputype="arm64"
-    cp arm64/ssh-chat $dlpath
+    cp -f arm64/ssh-chat "$dlpath"
+
 # Check if the CPU architecture is amd64 (x86_64)
 elif [ "$cpu_arch" == "x86_64" ]; then
     cputype="amd64"
-    cp amd64/ssh-chat $dlpath
+    cp -f amd64/ssh-chat "$dlpath"
 else
     # If it's neither arm64 nor amd64, you can set it to another value or handle it accordingly
     cputype="unknown"
