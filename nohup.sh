@@ -3,13 +3,9 @@
 #watch df -h $1
 #
 
-10
+# You can add this script into /etc/rc.local file (before exit line), e.g.
 
-Simple way
+# /home/myuser/go.py &
 
-You can add this script into /etc/rc.local file (before exit line), e.g.
-
-/home/myuser/go.py &
-
-Where & at the end will run the script in the background.
+#Where & at the end will run the script in the background.
 #
