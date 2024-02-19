@@ -24,3 +24,12 @@ fi
 ssh $username@$host -p $port
 # Remote Access!
 # ssh jnet.sytes.net -p 2022
+
+# Enable correct ssh client side config
+# sudo gedit /etc/ssh/ssh_config
+# and add this
+#Host *    HostKeyAlgorithms +ssh-rsa
+
+
+
+#ssh test@localhost -p 2022

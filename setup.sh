@@ -9,6 +9,7 @@ cd $dlpath
 wget -c https://github.com/shazow/ssh-chat/releases/download/v1.6/ssh-chat-linux_amd64.tgz
 tar -xvf ssh-chat-linux_amd64.tgz
 cd ssh-chat/
+touch admins.txt
 ./ssh-chat
 cd ..
 sudo chmod +x *.sh
