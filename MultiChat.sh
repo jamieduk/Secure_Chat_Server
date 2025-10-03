@@ -2,4 +2,4 @@
 echo "Enter Your Alias To Connect To J~Net Multi-Chat"
 read username
 echo "Attempting To Join...`"
-ssh $username@jnet.sytes.net -p 2022
+ssh $username@jnet.sytes.net -p 2025
