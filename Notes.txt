@@ -1,11 +1,10 @@
-J~Net Chat (Online) 2022
+J~Net Chat (Online) 2022 - 2025
 
-jnet.sytes.net
+jnetai.com
 
 jnet.forumotion.com
 
-radio2020.ddns.net
-
+jnet.sytes.net
 
 Forum Link
 
@@ -20,13 +19,13 @@ echo "Welcome to the J~Net Chat" | figlet
 
 
 
-/home/$USERNAME/Documents/Scripts/Crypto/nc/Messaging/Chat_Server
+/home/$USER/Documents/Scripts/Crypto/nc/Messaging/Chat_Server
 
-ssh ANONAMOUSE@jnet.sytes.net -p 2022
+ssh ANONAMOUSE@jnet.sytes.net -p 2025
 
 Or
 
-ssh ANONAMOUSE@localhost -p 2022
+ssh ANONAMOUSE@localhost -p 2025
 
 /whois zak
 -> name: zak
@@ -213,54 +212,7 @@ If you like what you are reading, please consider buying us a coffee ( or 2 ) as
 
 Support Us
 
-We are thankful for your never ending support.
-Related Posts
-Mosh Shell SSH Client	
-
-How to Install Mosh Shell as SSH Alternative on Linux
-Enable Two Factor Authentication in Ubuntu	
-
-How to Use Two-Factor Authentication with Ubuntu
-Passwordless SSH Login for Multiple Remote Servers	
-
-Setup Passwordless SSH Login for Multiple Remote Servers Using Script
-PuTTY Configuration Tips and Tricks	
-
-Useful PuTTY Configuration Tips and Tricks
-Increase SSH Connection Timeout	
-
-How to Increase SSH Connection Timeout in Linux
-Secure OpenSSH Server	
-
-How to Secure and Harden OpenSSH Server
-10 thoughts on “ssh-chat – Make Group/Private Chat with Other Linux Users Over SSH”
-
-    sankaran	
-    February 7, 2020 at 11:16 am
-
-    I have a problem with an ubuntu DHCP server and pxe boot options. Anyone can help me?
-    Reply	
-    ajay	
-    July 17, 2019 at 10:56 pm
-
-    Hi Team,
-
-    I am from cyber security team, i am working on security controls so from windows and Linux perspective i want to know which document or screenshot from these(Linux and Windows) will suffice for encryption and key management control for audit purpose.
-    Reply	
-    Nurul Episah Bt Eka	
-    May 18, 2018 at 2:17 pm
-
-    Hi, i am a student and quite a beginner in C Linux programming. I just want to ask how to add login prompt for client before they can start chatting with each other?
-    Reply	
-    shazow	
-    June 14, 2017 at 11:59 pm
-
-    Hey there, I’m the author of ssh-chat.
-
-    Some corrections for your article:
-
-    You don’t need to host a gateway for people to access ssh-chat. That is, you don’t need to ssh into one server, only to ssh into ssh-chat after that. You can just ssh into the ssh-chat server directly if the port is exposed. In fact, removing the need for a gateway to have ssh-secured chat is the entire point of ssh-chat.
-
+  
     Also as others mentioned, you don’t need to compile it from scratch to run the server. You can download our binaries here: https://github.com/shazow/ssh-chat/releases
 
     More FAQ stuff here: https://github.com/shazow/ssh-chat/wiki/FAQ
@@ -271,51 +223,7 @@ How to Secure and Harden OpenSSH Server
 
     Have fun!
     – shazow
-    Reply	
-        Aaron Kili	
-        June 15, 2017 at 12:19 pm
 
-        @shazow
-
-        Thanks a lot for writing back: giving us some useful information. We only run ssh into the server because we got errors while trying to connect to ssh-chat server directly. But we’ll test once more and possibly update the article as you have explained. Once more thanks for this useful server, and these remarks.
-        Reply	
-    Tim	
-    June 11, 2017 at 8:47 pm
-
-    Aaron,
-
-    Why is it required to install golang? Are the instructions to download source code and then build with golang?
-
-    Thanks!
-
-    Tim
-    Reply	
-        Aaron Kili	
-        June 12, 2017 at 5:22 pm
-
-        @Tim
-
-        You only need GoLang if your installing from source. Golang is statically compiled in the binary, just install and run it as mentioned by @Will below.
-        Reply	
-    Will	
-    June 10, 2017 at 8:33 pm
-
-    Golang is statically compiled meaning you don’t need to install golang to run the binary files. Just download the executable and run.
-    Reply	
-        Aaron Kili	
-        June 12, 2017 at 5:19 pm
-
-        @Will
-
-        Yes, thats correct, unless you want to install from source. Thanks for the insight.
-        Reply	
-        Tim	
-        June 12, 2017 at 7:49 pm
-
-        Thanks!
-        Reply	
-
-Got something to say? Join the discussion.
 
 Have a question or suggestion? Please leave a comment to start the discussion. Please keep in mind that all comments are moderated and your email address will NOT be published.
 
@@ -336,6 +244,16 @@ sshpass -p "YOUR_PASSWORD" ssh -o StrictHostKeyChecking=no YOUR_USERNAME@SOME_SI
 Chat Server Example:
 
 sshpass -p "PASSWORD" ./ssh-chat --verbose --bind ":2022" --identity ~/.ssh/id_dsa --log=log.txt --motd=message.txt --admin=admins.txt
+
+
+To add an admin
+
+cat ~/.ssh/id_rsa.pub >> ~/Documents/Apps/Secure_Chat_Server/admins.txt
+
+Test Admin (inside same folder as admins.txt file)
+
+if grep -Fq "$(sed -n '1p' ~/.ssh/id_rsa.pub)" admins.txt; then echo "YES You a ADMIN"; else echo "NOT ADMIN"; fi
+
 
 
 More found @

@@ -12,11 +12,14 @@
 https://jnet.forumotion.com/t1824-secure-chat-server-for-linux-bash#2829
 
 Main Site
+jnetai.com
+
+Backup Site
 jnet.sytes.net
 
 Forum Site 
 jnet.forumotion.com
 
 Live J~Net Radio Station
-radio2020.ddns.net
+radio.jnetai.com
 

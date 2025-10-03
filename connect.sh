@@ -1,5 +1,5 @@
 #!/bin/bash
-# (c)J~Net 2025
+# (c)J~Net 2022
 #
 # Usage:
 #   ./connect.sh Jay
@@ -11,10 +11,10 @@
 #   ./ssh-chat --verbose --bind ":2025" --identity ~/.ssh/id_dsa
 #
 # Test Server:
-#   ssh localhost -p 2025
+#   ssh localhost -p 2022
 
-host="jnet.sytes.net" # Change to your own for example localhost
-port=2025             # change port to match server you connecting to!
+host="jnet.sytes.net"
+port=2025
 
 if [ -z "$1" ]
 then
@@ -29,4 +29,5 @@ fi
 ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedAlgorithms=+ssh-rsa $username@$host -p $port
 
 # Remote Access Example:
-#   ssh jnet.sytes.net -p 2025
+#   ssh jnet.sytes.net -p 2022
+

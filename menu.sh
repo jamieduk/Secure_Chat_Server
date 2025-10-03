@@ -4,7 +4,7 @@
 #
 #
 #
-echo "Online Multi-User Chat Room Style Messenger 2021 - 2025"
+echo "Online Multi-User Chat Room Style Messenger 2025"
 echo ""
 select fname in *.sh;
 do

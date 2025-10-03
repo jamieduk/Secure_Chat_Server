@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "Setting Up Secure Chat (c)J~Net 2023 "
-sudo apt install -y sshpass
+echo "Setting Up Secure Chat (c)J~Net 2025 "
+sudo apt install -y sshpass iptables-persistent
 
 sudo chmod +x *.sh
 
@@ -39,4 +39,9 @@ sudo chmod +x ./ssh-chat
 echo "Whats Your Email? (Used for keygen creating for server side...)"
 read email
 ssh-keygen -t rsa -b 4096 -C "$email" -f $HOME/.ssh/id_dsa
+
+sudo iptables -A INPUT -p tcp --dport 2025 -j ACCEPT
+
+sudo netfilter-persistent save
+
 #./ssh-chat
