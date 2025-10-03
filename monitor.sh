@@ -8,7 +8,7 @@
 #see https://stackoverflow.com/questions/29728151/how-to-listen-for-multiple-tcp-connection-using-nc
 #
 #
-defaultport=2022
+defaultport=2025
 
 if [ -z "$1" ];
 then
