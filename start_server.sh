@@ -4,9 +4,9 @@
 # sudo apt install -y sshpass
 #
 # Server
-path="/home/$USER/Documents/Scripts/Bash/Secure_Chat_Server"
+path="/home/$USER/Documents/Scripts/Bash/Secure_Chat_Server" # Set to your path of script!
 #sshpass -p "PASSWORD" $path
-./ssh-chat --verbose --bind ":2022" --identity ~/.ssh/id_dsa --log=$path/log.txt --motd=$path/message.txt --admin=$path/admins.txt
+./ssh-chat --verbose --bind ":2025" --identity ~/.ssh/id_dsa --log=$path/log.txt --motd=$path/message.txt --admin=$path/admins.txt
 #sudo ./ssh-chat --verbose --bind ":2022" --identity ~/.ssh/id_dsa --log=log.txt --motd=message.txt --admin=admins.txt
 # Connect To Test Server (jnet.sytes.net)
 #ssh localhost -p 2022
