@@ -34,6 +34,7 @@ else
 fi
 echo "CPU Detected: $cputype"
 #
+sudo chmod +x ./ssh-chat
 
 echo "Whats Your Email? (Used for keygen creating for server side...)"
 read email
